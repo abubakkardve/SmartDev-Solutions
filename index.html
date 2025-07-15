@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Abubakkar - Tech Creator | App Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0a192f;
+            --secondary-color: #172a45;
+            --accent-color: #64ffda;
+            --text-primary: #e6f1ff;
+            --text-secondary: #8892b0;
+            --navy-shadow: rgba(2, 12, 27, 0.7);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        .profile-header {
+            position: relative;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--navy-shadow);
+        }
+
+        .cover-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background: var(--secondary-color);
+            position: relative;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid var(--accent-color);
+            object-fit: cover;
+            margin-top: -75px;
+            z-index: 1;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-name {
+            font-size: 2rem;
+            margin: 15px 0 5px;
+            font-weight: 700;
+        }
+
+        .profile-title {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .profile-email {
+            margin-bottom: 15px;
+        }
+
+        .email-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            background: rgba(100, 255, 218, 0.1);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .email-link:hover {
+            background: rgba(100, 255, 218, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            background: var(--accent-color);
+            color: var(--primary-color);
+            box-shadow: 0 10px 20px rgba(100, 255, 218, 0.3);
+        }
+
+        /* Apps Section */
+        .apps-section {
+            margin: 40px 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+            color: var(--accent-color);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: var(--accent-color);
+            margin: 10px auto;
+            border-radius: 3px;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .app-card {
+            background: var(--secondary-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--navy-shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .app-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px var(--navy-shadow);
+            border-color: var(--accent-color);
+        }
+
+        .app-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .app-info {
+            padding: 20px;
+        }
+
+        .app-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .app-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 20px;
+            background: var(--accent-color);
+            color: var(--primary-color);
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .app-link:hover {
+            background: #52e0c4;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+        }
+
+        /* Bio Section */
+        .bio-section {
+            background: var(--secondary-color);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px var(--navy-shadow);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .bio-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .bio-name {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* Ad Sections */
+        .ad-container {
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100px;
+            background: rgba(10, 25, 47, 0.5);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .ad-leaderboard {
+            width: 100%;
+            max-width: 728px;
+            height: 90px;
+        }
+
+        .ad-banner {
+            width: 100%;
+            max-width: 468px;
+            height: 60px;
+        }
+
+        .ad-mobile {
+            width: 320px;
+            height: 50px;
+        }
+
+        .ad-sidebar {
+            width: 160px;
+            height: 300px;
+        }
+
+        .ad-square {
+            width: 300px;
+            height: 250px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .cover-image {
+                height: 200px;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+                margin-top: -60px;
+            }
+
+            .profile-name {
+                font-size: 1.5rem;
+            }
+
+            .profile-title {
+                font-size: 1rem;
+            }
+
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ad-sidebar, .ad-square {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Profile Header -->
+        <header class="profile-header fade-in">
+            <img src="https://i.ibb.co/Gw4CqcN/20250715-164031.jpg" alt="Cover Photo" class="cover-image">
+            <div class="profile-info">
+                <img src="https://i.ibb.co/TqRZ6wQF/20250715-101532.jpg" alt="Profile Photo" class="profile-image">
+                <h1 class="profile-name">Md. Abubakkar</h1>
+                <p class="profile-title">Tech Creator | App Developer | imo Mod Expert</p>
+                <div class="profile-email">
+                    <a href="mailto:abubakkar678121@gmail.com" class="email-link">Contact via Email</a>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="social-links">
+                    <a href="https://www.instagram.com/md.abu.bokkar.bd25" class="social-link" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mdabubakkar" class="social-link" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://x.com/AbuBokka_Dev" class="social-link" target="_blank" title="X (Twitter)">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.facebook.com/mdabubakkar.25" class="social-link" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://t.me/smarttipsbd25" class="social-link" target="_blank" title="Telegram Channel">
+                        <i class="fab fa-telegram-plane"></i>
+                    </a>
+                    <a href="https://t.me/smarttipsbd" class="social-link" target="_blank" title="Telegram Group">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="https://youtube.com/@tipsbd25" class="social-link" target="_blank" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://invites.waveful.app/2Y3d" class="social-link" target="_blank" title="Waveful">
+                        <i class="fas fa-wave-square"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Ad Section - Leaderboard -->
+        <div class="ad-container fade-in delay-1">
+            <div class="ad-leaderboard" id="ad-leaderboard">
+                <!-- 728x90 Ad will load here -->
+                <script type="text/javascript">
+                    atOptions = {
+                        'key' : 'f22e84ab6933de7560b1c58944107cb2',
+                        'format' : 'iframe',
+                        'height' : 90,
+                        'width' : 728,
+                        'params' : {}
+                    };
+                </script>
+                <script type="text/javascript" src="//www.highperformanceformat.com/f22e84ab6933de7560b1c58944107cb2/invoke.js"></script>
+            </div>
+        </div>
+
+        <!-- Apps Section -->
+        <section class="apps-section fade-in delay-2">
+            <h2 class="section-title">My Apps & Tools</h2>
+            <div class="apps-grid">
+                <!-- App Card 1 -->
+                <div class="app-card">
+                    <img src="https://i.ibb.co/v6StwPkP/20250715-164919.jpg" alt="Free Premium Apps" class="app-image">
+                    <div class="app-info">
+                        <h3 class="app-title">Free Premium Apps</h3>
+                        <p>Collection of premium apps available for free</p>
+                        <a href="https://md-abu-bakkar.github.io/ProAppsFreeway/" class="app-link" target="_blank">Get App</a>
+                    </div>
+                </div>
+                
+                <!-- App Card 2 -->
+                <div class="app-card">
+                    <img src="image link" alt="Make My Ad" class="app-image">
+                    <div class="app-info">
+                        <h3 class="app-title">Make My Ad</h3>
+                        <p>Easy-to-use ad builder for your marketing needs</p>
+                        <a href="https://md-abu-bakkar.github.io/MakeMyAd/" class="app-link" target="_blank">Try Now</a>
+                    </div>
+                </div>
+                
+                <!-- App Card 3 -->
+                <div class="app-card">
+                    <img src="https://i.ibb.co/r2tzYGLv/20250715-170506.jpg" alt="SmartCalculator BD" class="app-image">
+                    <div class="app-info">
+                        <h3 class="app-title">SmartCalculator BD</h3>
+                        <p>Advanced calculator with special features for Bangladesh</p>
+                        <a href="https://md-abu-bakkar.github.io/SmartCalculatorBD.apk/" class="app-link" target="_blank">Download</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ad Section - Square -->
+        <div class="ad-container fade-in delay-1">
+            <div class="ad-square" id="ad-square">
+                <!-- 300x250 Ad will load here -->
+                <script type="text/javascript">
+                    atOptions = {
+                        'key' : '7042485dacd2ed37f414c112ab42d1fe',
+                        'format' : 'iframe',
+                        'height' : 250,
+                        'width' : 300,
+                        'params' : {}
+                    };
+                </script>
+                <script type="text/javascript" src="//www.highperformanceformat.com/7042485dacd2ed37f414c112ab42d1fe/invoke.js"></script>
+            </div>
+        </div>
+
+        <!-- Bio Section -->
+        <section class="bio-section fade-in delay-3">
+            <h3 class="bio-name">Md. Abubakkar</h3>
+            <p class="bio-text">
+                A passionate tech creator and app developer from Bangladesh. Since 2021, building custom tools, 
+                premium apps, and solutions for content creators with a focus on simplicity, performance, and value.
+            </p>
+        </section>
+
+        <!-- Ad Section - Banner -->
+        <div class="ad-container fade-in">
+            <div class="ad-banner" id="ad-banner">
+                <!-- 468x60 Ad will load here -->
+                <script type="text/javascript">
+                    atOptions = {
+                        'key' : 'e4f5f3f71157bf52dda4460f12a9d5c5',
+                        'format' : 'iframe',
+                        'height' : 60,
+                        'width' : 468,
+                        'params' : {}
+                    };
+                </script>
+                <script type="text/javascript" src="//www.highperformanceformat.com/e4f5f3f71157bf52dda4460f12a9d5c5/invoke.js"></script>
+            </div>
+        </div>
+
+        <!-- Additional Ad Scripts -->
+        <div style="display: none;">
+            <!-- Direct Link Ad -->
+            <a href="https://www.profitableratecpm.com/mbp4btyi?key=80e3f977f64c09639e78103bffbcacde"></a>
+            
+            <!-- Invoke Script -->
+            <script async="async" data-cfasync="false" src="//pl27170817.profitableratecpm.com/3306bec72b792123b7ff703f7905b4f6/invoke.js"></script>
+            <div id="container-3306bec72b792123b7ff703f7905b4f6"></div>
+            
+            <!-- Inline JS Scripts -->
+            <script type='text/javascript' src='//pl27170826.profitableratecpm.com/5f/d8/97/5fd8973ec39689272d4fa4e12e3abef9.js'></script>
+            <script type='text/javascript' src='//pl27170833.profitableratecpm.com/c2/ff/69/c2ff69165d258c6bafc1f6a8a9797a58.js'></script>
+            
+            <!-- Additional HighPerformanceFormat Ads -->
+            <div id="ad-mobile">
+                <script type="text/javascript">
+                    atOptions = {
+                        'key' : '5bc25cd0b371c68f0dbd30840a1d91c1',
+                        'format' : 'iframe',
+                        'height' : 50,
+                        'width' : 320,
+                        'params' : {}
+                    };
+                </script>
+                <script type="text/javascript" src="//www.highperformanceformat.com/5bc25cd0b371c68f0dbd30840a1d91c1/invoke.js"></script>
+            </div>
+            
+            <div id="ad-sidebar">
+                <script type="text/javascript">
+                    atOptions = {
+                        'key' : '154723b96a181bd35f7d788ea51287dc',
+                        'format' : 'iframe',
+                        'height' : 300,
+                        'width' : 160,
+                        'params' : {}
+                    };
+                </script>
+                <script type="text/javascript" src="//www.highperformanceformat.com/154723b96a181bd35f7d788ea51287dc/invoke.js"></script>
+            </div>
+        </div>
+    </div>
+
+    <footer class="fade-in delay-3">
+        <p>&copy; 2025 Md. Abubakkar. All Rights Reserved.</p>
+        <p>Active since May 2021</p>
+    </footer>
+
+    <script>
+        // Ad loading strategy - load ads when visible
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initial ads load
+            loadVisibleAds();
+            
+            // Load ads as user scrolls
+            window.addEventListener('scroll', function() {
+                loadVisibleAds();
+            });
+            
+            // Load ads periodically (every 30 seconds) for refresh
+            setInterval(loadVisibleAds, 30000);
+        });
+        
+        function loadVisibleAds() {
+            const adContainers = document.querySelectorAll('.ad-container');
+            
+            adContainers.forEach(container => {
+                const rect = container.getBoundingClientRect();
+                const isVisible = (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+                
+                if (isVisible) {
+                    container.style.display = 'flex';
+                }
+            });
+            
+            // Additional ad scripts that might need triggering
+            try {
+                if (typeof window.initAds !== 'undefined') {
+                    window.initAds();
+                }
+            } catch (e) {
+                console.log('Ad scripts loading normally');
+            }
+        }
+        
+        // Smooth scroll and animation triggers
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        // Initial animation check
+        animateOnScroll();
+        
+        // Check on scroll
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>
